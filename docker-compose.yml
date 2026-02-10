@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app # Esto permite que si editas código, se actualice en Docker
+    environment:
+      - TORCH_HOME=/app/torch_cache # Guardar modelos en caché
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # Evita borrar los módulos del contenedor
+    depends_on:
+      - backend
