@@ -1,16 +1,11 @@
-# --- General ---
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Node / React
+node_modules/
+dist/
 .DS_Store
-*.log
-.vscode/
-.idea/
-
-# --- Python (Backend) ---
-backend/venv/
-backend/__pycache__/
-*.pyc
-
-# --- Node (Frontend) ---
-frontend/node_modules/
-frontend/dist/
-frontend/.env
-frontend/.env.local
+coverage/
